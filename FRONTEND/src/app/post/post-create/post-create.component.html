@@ -1,0 +1,91 @@
+<body>
+  <div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
+        </div>
+        <form
+          class="screen-body"
+          (submit)="onaddpost(addPost)"
+          #addPost="ngForm"
+        >
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>Create</span>
+              <span>Post</span>
+            </div>
+          </div>
+          <div class="screen-body-item">
+            <div class="app-form">
+              <div class="app-form-group">
+                <div class="input-group">
+                  <input
+                    required=""
+                    type="text"
+                    ngModel
+                    name="enteredTitle"
+                    autocomplete="off"
+                    class="input"
+                    maxlength="40"
+                    #enteredTitle="ngModel"
+                    pattern="^[a-zA-Z0-9\s_-]+$"
+                  />
+                  <label class="user-label">Post Title</label>
+                </div>
+              </div>
+              <div class="app-form-group">
+                <div class="input-group">
+                  <input
+                    required=""
+                    ngModel
+                    name="enteredStatus"
+                    autocomplete="off"
+                    class="input"
+                    #enteredStatus="ngModel"
+                    maxlength="10"
+                    pattern="^[a-zA-Z0-9\s_-]+$"
+                  />
+                  <label class="user-label">Post Status</label>
+                </div>
+              </div>
+              <div class="app-form-group">
+                <div class="input-group">
+                  <input
+                    required=""
+                    ngModel
+                    name="enteredDepartment"
+                    autocomplete="off"
+                    class="input"
+                    #enteredDepartment="ngModel"
+                  />
+                  <label class="user-label">Department</label>
+                </div>
+              </div>
+              <textarea
+                class="feedback-input"
+                placeholder="Description"
+                ngModel
+                name="enteredDescription"
+                autocomplete="off"
+                #enteredDescription="ngModel"
+              ></textarea>
+              <div class="app-form-group buttons">
+                <button class="app-form-button" type="submit">SEND</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,36 @@
+<body>
+  <div class="cards">
+    <div class="card" *ngFor="let post of posts">
+      <div class="card2">
+        <label class="cardTextColor">
+          <h2>
+            {{ post.title }}
+          </h2>
+
+          <h4>
+            {{ post.description }}
+          </h4>
+          <span class="tag tag-purple" style="float: left; display: inline">{{
+            post.createdAt
+          }}</span>
+          <span class="tag tag-teal" style="float: left; display: inline">{{
+            post.department
+          }}</span>
+          <span class="tag tag-pink" style="float: left; display: inline">{{
+            post.status
+          }}</span>
+          <span class="tag tag-green" style="float: left; display: inline">{{
+            post.username
+          }}</span>
+          <br />
+          <br />
+          <br />
+          <br />
+          <a class="button" (click)="ondelete(post._id)">
+            Resolved <fa-icon [icon]="filmIcon"></fa-icon
+          ></a>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>

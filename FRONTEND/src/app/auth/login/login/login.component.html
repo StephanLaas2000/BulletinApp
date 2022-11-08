@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<form>
+  <head>
+    <title>Slide Navbar</title>
+    <link rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <input
+        (click)="clickCheckSignUp(signupform)"
+        type="checkbox"
+        id="chk"
+        aria-hidden="true"
+      />
+
+      <div class="signup">
+        <form (submit)="onsignup(signupform)" #signupform="ngForm">
+          <label for="chk" aria-hidden="true" class="label">Sign up</label>
+          <input
+            class="input"
+            ngModel
+            name="enteredusername"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            type="text"
+            placeholder="Email"
+            #enteredusername="ngModel"
+            required
+          />
+          <div
+            class="customValidationMsg"
+            *ngIf="
+              enteredusername.invalid &&
+              (enteredusername.dirty || enteredusername.touched)
+            "
+          >
+            Note: Enter Valid Email Address
+          </div>
+          <div class="input-container">
+            <div class="inline">
+              <div class="input-icons">
+                <i class="icon" (click)="password()">{{
+                  show ? "Show" : "Hide"
+                }}</i>
+                <input
+                  class="input"
+                  ngModel
+                  name="enteredpassword"
+                  [type]="show ? 'text' : 'password'"
+                  placeholder="Password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  #enteredpassword="ngModel"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="customValidationMsg"
+            *ngIf="
+              enteredpassword.invalid &&
+              (enteredpassword.dirty || enteredpassword.touched)
+            "
+          >
+            Note: Must contain at least one number and one uppercase and
+            lowercase letter, and at least 8 Chracaters
+          </div>
+          <button>Signup</button>
+        </form>
+      </div>
+
+      <div class="login">
+        <form (submit)="onlogin(loginform)" #loginform="ngForm">
+          <label
+            for="chk"
+            aria-hidden="true"
+            (click)="clickCheckLogin(loginform)"
+            >Login</label
+          >
+          <input
+            class="input"
+            ngModel
+            name="enteredusername1"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            type="text"
+            placeholder="Email"
+            #enteredusername1="ngModel"
+            required
+          />
+          <div
+            class="customValidationMsg"
+            *ngIf="
+              enteredusername1.invalid &&
+              (enteredusername1.dirty || enteredusername1.touched)
+            "
+          >
+            Note: Enter Valid Email Address
+          </div>
+          <div class="input-container">
+            <div class="inline">
+              <div class="input-icons">
+                <i class="icon" (click)="password()">{{
+                  show ? "Show" : "Hide"
+                }}</i>
+                <input
+                  class="input"
+                  ngModel
+                  name="enteredpassword1"
+                  [type]="show ? 'text' : 'password'"
+                  placeholder="Password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  #enteredpassword1="ngModel"
+                  required
+                />
+                <div
+                  class="customValidationMsg"
+                  *ngIf="
+                    enteredpassword1.invalid &&
+                    (enteredpassword1.dirty || enteredpassword1.touched)
+                  "
+                >
+                  Note: Must contain at least one number and one uppercase and
+                  lowercase letter, and at least 8 Chracaters
+                </div>
+              </div>
+            </div>
+          </div>
+          <button>Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</form>

@@ -1,0 +1,38 @@
+
+GET https://localhost:3000/api/post HTTP/1.1
+###
+POST https://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username":"ST10116977",
+    "password":"Password1"
+}
+###
+
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+ "username": "Stepha",
+ "password": "p"
+ 
+}
+
+###
+POST https://localhost:3000/api/post HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNUMTAxMTY5NzciLCJ1c2VyaWQiOiI2MzE0NWI5MTIyY2E1NDg1NTk5MDNjZTkiLCJpYXQiOjE2NjU2ODUzMTcsImV4cCI6MTY2NjI5MDExN30.fn1hHClNzzqh6SMnbIWKvqeYVyo7EbgdDAO04PrR6hY
+
+{
+ "id": "1",
+    "title":"Software Debug2",
+    "status":"High2",
+    "description":"A bug has occured in our stock managemnt system2"
+}
+
+###
+DELETE https://localhost:3000/api/post/631462c8b7056095d7d49291 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJ1c2VyaWQiOiI2MzEzYWE4ZjVmNmQ1ZGEyNGM4NDkyYTMiLCJpYXQiOjE2NjUzODY0MjcsImV4cCI6MTY2NTk5MTIyN30.snKEWS-rRsAN4qxey2u3nH07nmgbyZUa9RofKv5pA4c
+
+###
